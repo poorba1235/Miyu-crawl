@@ -1,7 +1,7 @@
 {
   "name": "Design-Favor-production",
   "private": true,
-  "proxy": "https://miyu-clawbot-backend-x626.vercel.app",
+  "proxy": "https://miyu-clawbot-backend.vercel.app",
   "version": "1.0.0",
   "type": "module",
   "scripts": {

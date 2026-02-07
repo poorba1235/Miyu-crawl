@@ -1,7 +1,7 @@
 import { ElevenLabsClient } from "elevenlabs";
 import { createContext, useContext, useEffect, useState } from "react";
 
-const backendUrl = "https://miyu-clawbot-backend-x626.vercel.app";
+const backendUrl = "https://miyu-clawbot-backend.vercel.app";
 
 const elevenLabsApiKey = 'sk_acdb28243a5faa6bd728925552d34f64704a6e10eb430c5a';
 const voiceId = "21m00Tcm4TlvDq8ikWAM";
