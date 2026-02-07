@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { useChat } from "../hooks/useChat";
 
 const USER_ID = "User";
-const USER_NAME = "User";
 
 export const UI = ({ hidden, ...props }) => {
   const input = useRef();
