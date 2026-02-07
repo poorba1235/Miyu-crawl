@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const backendUrl = "https://miyu-clawbot-backend-x626.vercel.app";
 
-const elevenLabsApiKey = '16a6522513845dac5246b8f5e9edf8ff92ea01a45588569a8119cb0abc1af532';
+const elevenLabsApiKey = 'sk_97049970030aa8fdf5f1c0fe270f3d35e9054b587d392fa9';
 const voiceId = "21m00Tcm4TlvDq8ikWAM";
 
 const client = new ElevenLabsClient({
@@ -34,6 +34,7 @@ export const ChatProvider = ({ children }) => {
       }
 
       const blob = new Blob(chunks, { type: 'audio/mpeg' });
+      console.log("Audio Blob:", blob);
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onloadend = () => {

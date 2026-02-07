@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Leva } from "leva";
 import Lottie from "lottie-react";
-import loadingAnimation from "/public/loading.json"; 
+import { useEffect, useState } from "react";
 import { Experience } from "./components/Experience";
 import { UI } from "./components/UI";
+import { useChat } from "./hooks/useChat";
+import loadingAnimation from "/public/loading.json";
 
 function App() {
+  const { chat, message, onMessagePlayed } = useChat();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,10 +25,10 @@ function App() {
         <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-[1000] text-center">
 
 
-          <Lottie 
-            animationData={loadingAnimation} 
-            loop={true} 
-            className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px]" 
+          <Lottie
+            animationData={loadingAnimation}
+            loop={true}
+            className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px]"
           />
 
           <p className="hidden text-xs text-gray-600 max-w-[80%] mt-4 md:block md:hidden">
@@ -36,22 +38,22 @@ function App() {
         </div>
       )}
 
-      <Leva hidden  />
+      <Leva hidden />
       <UI />
       <Canvas camera={{ position: [0, 0, 2], fov: 45 }}>
-        <Experience />
-      <OrbitControls
-        enablePan={true}
-        maxPolarAngle={Math.PI / 2}
-        minDistance={1}
-        maxDistance={2}
-        minAzimuthAngle={-Math.PI / 4}
-        maxAzimuthAngle={Math.PI / 4}
-        enableDamping={true}
-        dampingFactor={0.05}
-        rotateSpeed={0.8}
-        smoothTime={0.3}
-      />
+        <Experience chat={chat} message={message} onMessagePlayed={onMessagePlayed} />
+        <OrbitControls
+          enablePan={true}
+          maxPolarAngle={Math.PI / 2}
+          minDistance={1}
+          maxDistance={2}
+          minAzimuthAngle={-Math.PI / 4}
+          maxAzimuthAngle={Math.PI / 4}
+          enableDamping={true}
+          dampingFactor={0.05}
+          rotateSpeed={0.8}
+          smoothTime={0.3}
+        />
 
       </Canvas>
     </>
