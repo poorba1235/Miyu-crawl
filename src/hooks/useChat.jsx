@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const backendUrl = "https://miyu-clawbot-backend-x626.vercel.app";
 
-const elevenLabsApiKey = 'sk_97049970030aa8fdf5f1c0fe270f3d35e9054b587d392fa9';
+const elevenLabsApiKey = 'sk_acdb28243a5faa6bd728925552d34f64704a6e10eb430c5a';
 const voiceId = "21m00Tcm4TlvDq8ikWAM";
 
 const client = new ElevenLabsClient({
